@@ -5,6 +5,7 @@ class RockPaperScissors
 
   def self.winner(player1, player2)
     valid_strategies = ["R", "P", "S"]
+  # some shorthand
     p1 = player1[1]
     p2 = player2[1]
     raise NoSuchStrategyError, "Strategy must be one of R,P,S" unless valid_strategies.any? { |strat| p1 == strat } and valid_strategies.any? { |strat| p2 == strat }
@@ -16,6 +17,7 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
+  # It is either an array or a string
     if tournament[0].is_a?(String)
       return tournament
     end
